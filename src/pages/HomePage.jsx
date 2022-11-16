@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
     <p>
-      홈
+      Hello, world!
     </p>
   );
 }

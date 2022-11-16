@@ -1,110 +1,64 @@
 /* eslint-disable no-undef */
-Feature('회원가입-고객은 상품을 주문할 수 있는 자격을 얻기 위해 회원가입을 할 수 있다.');
+Feature('로그인-고객은 자신임을 증명하기 위해 로그인 할수 있다.');
 
 // Given
 Before(({ I }) => {
+  I.setupDatabase();
   I.amOnPage('/');
-  I.click('회원가입');
+  I.click('로그인');
 });
 
-Scenario('회원가입 성공', ({ I }) => {
+Scenario('로그인 성공', ({ I }) => {
   // When
-  I.fillField('이름', '오진성');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!');
+  I.login({
+    userName: 'ojseong0828',
+    password: 'Wlstjdcjs153!',
+  });
 
   // Then
-  I.see('회원가입 완료');
+  I.see('Hello, world!');
 });
 
-Scenario('회원가입 실패(동일한 아이디 존재)', ({ I }) => {
-  // Given
-  //  동일한 아이디 만들어 넣기
-
+Scenario('로그인 실패(아이디가 존재하지 않을때)', ({ I }) => {
   // When
-  I.fillField('이름', '오진성');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!');
+  I.login({
+    userName: 'ojs0828',
+    password: 'Wlstjdcjs153!',
+  });
 
   // Then
-  I.see('해당 아이디는 사용할수 없습니다.');
+  I.see('아이디 혹은 비밀번호가 맞지 않습니다.');
 });
 
-Scenario('회원가입 실패(이름 형식 실패)', ({ I }) => {
+Scenario('로그인 실패(비밀번호가 틀렸을때)', ({ I }) => {
   // When
-  I.fillField('이름', '오진성일까아닐까그것이문제로다');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!');
+  I.login({
+    userName: 'ojseong0828',
+    password: 'WrongPassword!!',
+  });
 
   // Then
-  I.see('이름을 다시 확인해주세요.');
+  I.see('아이디 혹은 비밀번호가 맞지 않습니다.');
 });
 
-Scenario('회원가입 실패(비밀번호 형식 실패)', ({ I }) => {
+Scenario('로그인 실패(아이디 미입력)', ({ I }) => {
   // When
-  I.fillField('이름', '오진성');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'ㅎㅇ');
-  I.fillField('비밀번호 확인', 'ㅎㅇ');
-
-  // Then
-  I.see('비밀번호를 다시 확인해주세요');
-});
-
-Scenario('회원가입 실패(비밀번호 재확인 실패)', ({ I }) => {
-  // When
-  I.fillField('이름', '오진성');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!!');
-
-  // Then
-  I.see('비밀번호가 일치하지 않습니다.');
-});
-
-Scenario('회원가입 실패(이름 빈칸  넣었을때)', ({ I }) => {
-  // When
-  I.fillField('이름', '');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!');
-
-  // Then
-  I.see('이름을 입력해주세요.');
-});
-
-Scenario('회원가입 실패(아이디 빈칸  넣었을때)', ({ I }) => {
-  // When
-  I.fillField('이름', '오진성');
-  I.fillField('아이디', '');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!');
+  I.login({
+    userName: '',
+    password: 'Wlstjdcjs153!',
+  });
 
   // Then
   I.see('아이디를 입력해주세요.');
 });
 
-Scenario('회원가입 실패(비밀번호 빈칸  넣었을때)', ({ I }) => {
+Scenario('로그인 실패(비밀번호 미입력)', ({ I }) => {
   // When
-  I.fillField('이름', '');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', '');
-  I.fillField('비밀번호 확인', 'wlstjdcjs153!');
+  I.login({
+    userName: 'ojseong0828',
+    password: '',
+  });
 
   // Then
   I.see('비밀번호를 입력해주세요.');
-});
-
-Scenario('회원가입 실패(비밀번호 확인 빈칸  넣었을때)', ({ I }) => {
-  // When
-  I.fillField('이름', '');
-  I.fillField('아이디', 'ojs0828');
-  I.fillField('비밀번호', 'wlstjdcjs153!');
-  I.fillField('비밀번호 확인', '');
-
-  // Then
-  I.see('비밀번호 확인을 입력해주세요.');
 });

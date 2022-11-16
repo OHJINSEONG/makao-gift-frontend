@@ -12,13 +12,13 @@ exports.config = {
   output: './output',
   helpers: {
     Playwright: {
-      url: 'http://localhost:8000',
+      url: 'http://localhost:8080',
       show: true,
-      browser: 'chromium'
-    }
+      browser: 'chromium',
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
-  name: 'makao-gift-frontend'
-}
+  name: 'makao-gift-frontend',
+};

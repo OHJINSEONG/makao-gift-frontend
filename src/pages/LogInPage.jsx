@@ -1,7 +1,7 @@
-export default function LogInPage() {
+import LoginForm from './LoginForm';
+
+export default function LoginPage() {
   return (
-    <p>
-      로그인
-    </p>
+    <LoginForm />
   );
 }

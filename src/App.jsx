@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, Routes, useLoaderData } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useLocalStorage } from 'usehooks-ts';
 import Header from './conponents/Header';
 import useUserStore from './hooks/useUserStore';

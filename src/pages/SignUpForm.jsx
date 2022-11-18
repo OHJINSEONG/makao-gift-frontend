@@ -1,11 +1,65 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import useUserStore from '../hooks/useUserStore';
+
+const Container = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  h1{
+    width: 200px;
+    text-align: center;
+    border-bottom: 1px solid #22daab;
+  }
+
+  .over {
+    color : black;
+  }
+
+  .clicked {
+    background-color: #008c69;
+  }
+
+  p {
+    font-size: .3em;
+    color: red
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+
+  label{
+    font-size: .4em;
+    margin-bottom: .3em;
+  }
+
+  input{
+    height: 30px;
+    border-style: double;
+  }
+`;
+
+const Button = styled.button`
+  width: 200px;
+  height: 35px;
+  margin-top: 10px;
+  color : white;
+  background-color: #22daab;
+`;
 
 export default function SignUpForm() {
   const navigate = useNavigate();
+  const [registerHover, setRegisterHover] = useState('');
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const userStore = useUserStore();
@@ -19,10 +73,11 @@ export default function SignUpForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <Container onSubmit={handleSubmit(onSubmit)}>
+      <h1>SIGN UP</h1>
+      <Wrapper>
         <label htmlFor="input-name">
-          이름
+          이름:
         </label>
         <input
           id="input-name"
@@ -35,10 +90,10 @@ export default function SignUpForm() {
           })}
         />
         <p>{errors.name?.message}</p>
-      </div>
-      <div>
+      </Wrapper>
+      <Wrapper>
         <label htmlFor="input-userName">
-          아이디
+          아이디:
         </label>
         <input
           id="input-userName"
@@ -53,14 +108,14 @@ export default function SignUpForm() {
         {userStore.isExistUserNameError ? (
           <p>{userStore.errorMessage}</p>
         ) : null}
-      </div>
-      <div>
+      </Wrapper>
+      <Wrapper>
         <label htmlFor="input-password">
-          비밀번호
+          비밀번호:
         </label>
         <input
           id="input-password"
-          type="text"
+          type="password"
           name="password"
           {...register('password', {
             required: '비밀번호를 입력해주세요.',
@@ -71,14 +126,14 @@ export default function SignUpForm() {
           })}
         />
         <p>{errors.password?.message}</p>
-      </div>
-      <div>
+      </Wrapper>
+      <Wrapper>
         <label htmlFor="input-reconfirmPassword">
-          비밀번호 확인
+          비밀번호 확인:
         </label>
         <input
           id="input-reconfirmPassword"
-          type="text"
+          type="password"
           name="reconfirmPassword"
           {...register('reconfirmPassword', {
             required: '비밀번호 확인을 입력해주세요.',
@@ -88,8 +143,18 @@ export default function SignUpForm() {
         {userStore.isReconfirmError ? (
           <p>{userStore.errorMessage}</p>
         ) : null}
-      </div>
-      <button type="submit">회원가입</button>
-    </form>
+      </Wrapper>
+      <Button
+        type="submit"
+        // eslint-disable-next-line no-nested-ternary
+        className={registerHover === 'over' ? 'over'
+          : registerHover === '' ? 'default' : 'clicked'}
+        onMouseEnter={() => { setRegisterHover('over'); }}
+        onMouseLeave={() => { setRegisterHover(''); }}
+        onClick={() => { setRegisterHover('click'); }}
+      >
+        회원가입
+      </Button>
+    </Container>
   );
 }

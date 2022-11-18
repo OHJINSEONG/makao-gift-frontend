@@ -34,10 +34,8 @@ export default class OrderStore extends Store {
     this.productImformation = productImformation;
   }
 
-  async order(data) {
-    const {
-      receiver, address, message, manufacturer,
-    } = data;
+  async createOrder(data) {
+    const { receiver, address, message } = data;
 
     await apiService.order({
       receiver,
@@ -46,6 +44,7 @@ export default class OrderStore extends Store {
       totalPrice: this.productImformation.totalPrice,
       amount: this.productImformation.amount,
       title: this.productImformation.title,
+      manufacturer: this.productImformation.manufacturer,
     });
 
     this.publish();

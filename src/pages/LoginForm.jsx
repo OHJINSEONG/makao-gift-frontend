@@ -2,10 +2,60 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
 import useProductStore from '../hooks/useProductStore';
 import useUserStore from '../hooks/useUserStore';
+
+const Container = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  h1{
+    border-bottom: 1px solid black;
+  }
+
+  p {
+    font-size: .3em;
+    color: red
+  }
+
+  a {
+    font-size: .9em;
+    margin-top: 10px;
+    color: black;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+
+  label{
+    font-size: .4em;
+    margin-bottom: .3em;
+  }
+
+  input{
+    padding: 10px;
+    height: 30px;
+    font-size: .5em;
+    border-style: double;
+  }
+`;
+
+const Button = styled.button`
+  width: 200px;
+  height: 35px;
+  margin-top: 10px;
+  color : white;
+  background-color: #22daab;
+`;
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -41,9 +91,9 @@ export default function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Container onSubmit={handleSubmit(onSubmit)}>
       <h1>USER LOGIN</h1>
-      <div>
+      <Wrapper>
         <input
           id="input-userName"
           type="text"
@@ -53,8 +103,9 @@ export default function LoginForm() {
             required: '아이디를 입력해주세요.',
           })}
         />
-      </div>
-      <div>
+      </Wrapper>
+      <p>{errors.userName?.message}</p>
+      <Wrapper>
         <input
           id="input-password"
           type="text"
@@ -64,13 +115,13 @@ export default function LoginForm() {
             required: '비밀번호를 입력해주세요.',
           })}
         />
-      </div>
-      <p>{errors.userName?.message}</p>
+      </Wrapper>
       <p>{errors.password?.message}</p>
       {userStore.isLoginError ? (
         <p>{userStore.errorMessage}</p>
       ) : null}
-      <button type="submit">로그인하기</button>
-    </form>
+      <Button type="submit">로그인하기</Button>
+      <Link to="/signup">회원가입</Link>
+    </Container>
   );
 }

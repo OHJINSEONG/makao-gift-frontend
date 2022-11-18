@@ -1,4 +1,5 @@
 import { setupServer } from 'msw/node';
+import { useParams } from 'react-router-dom';
 import config from '../config';
 
 const { rest } = require('msw');
@@ -52,6 +53,47 @@ const server = setupServer(
     }
 
     return res(ctx.status(200));
+  }),
+
+  rest.get(`${baseUrl}/products`, async (req, res, ctx) => {
+    await res(
+      ctx.json({
+        productDtos: [{
+          id: 1, name: '한우', price: 10000, title: '한우팝니다', manufacturer: '한국', imformation: '맛있음',
+        },
+        {
+          id: 2, name: '닭가슴살', price: 1000, title: '닭가슴살팝니다', manufacturer: '한국', imformation: '맛없음',
+        },
+        ],
+        pageDtos: [{ number: 1 }],
+      }),
+    );
+  }),
+
+  rest.get(`${baseUrl}/products/1`, async (req, res, ctx) => res(
+    ctx.json({
+      id: 1,
+      name: '한우',
+      price: 10000,
+      title: '한우팝니다',
+      manufacturer: '한국',
+      imformation: '맛있음',
+    }),
+  )),
+
+  rest.get(`${baseUrl}/orders`, async (req, res, ctx) => {
+    await res(
+      ctx.json({
+        orderDtos: [{
+          id: 1, manufacturer: '한국', title: '한우', receiver: '오진성',
+        },
+        {
+          id: 2, manufacturer: '한국', title: '닭가슴살', receiver: '오진성',
+        },
+        ],
+        pageDtos: [{ number: 1 }],
+      }),
+    );
   }),
 );
 

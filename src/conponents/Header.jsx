@@ -7,6 +7,7 @@ import useUserStore from '../hooks/useUserStore';
 const Container = styled.div`
   position: fixed;
   font-size: .5em;
+  font-weight: bold;
   width: 100%;
   background-color: white;
   border-bottom: solid 1px black;
@@ -56,6 +57,7 @@ export default function Header() {
   const [orderHover, setOrderHover] = useState(false);
 
   const userStore = useUserStore();
+
   const [accessToken, setAccessToken] = useLocalStorage('accessToken', '');
 
   const handleClick = () => {
@@ -88,18 +90,16 @@ export default function Header() {
                   onMouseLeave={() => { setStoreHover(false); }}
                 >
                   스토어
-
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/orders"
+                  to={accessToken ? '/orders' : '/login'}
                   className={orderHover ? 'on' : 'off'}
                   onMouseEnter={() => { setOrderHover(true); }}
                   onMouseLeave={() => { setOrderHover(false); }}
                 >
                   주문조회
-
                 </Link>
               </li>
             </Menu>

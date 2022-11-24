@@ -11,7 +11,12 @@ const Container = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 550px;
+  font-size: .4em;
+
+  .error {
+    color : red;
+  }
   `;
 
 const Wrapper = styled.div`
@@ -21,11 +26,49 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-  width: 200px;
+  width: 400px;
   height: 35px;
   margin-top: 10px;
   color : white;
   background-color: #22daab;
+`;
+
+const Image = styled.img`
+  width: 100px;
+  height: 100px;
+`;
+
+const Input = styled.div`
+  display: flex;
+  width: 400px;
+  margin-top: 10px;
+  flex-direction: column;
+
+  label{
+    margin-bottom: .3em;
+  }
+
+  input{
+    height: 30px;
+    border-style: double;
+    margin-bottom: 5px;
+  }
+
+  p{
+    color : #999999
+  }
+`;
+
+const Menu = styled.div`
+  display: flex;
+`;
+
+const Imformation = styled.div`
+  display: flex;
+  width: 300px;
+  margin-left: 20px;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export default function OrderPage() {
@@ -44,7 +87,29 @@ export default function OrderPage() {
   return (
     <Container onSubmit={handleSubmit(handleSubmitOrder)}>
       <Wrapper>
-        <div>
+        <Menu>
+          <Image src={orderStore.productImformation.image} />
+          <Imformation>
+            <p>
+              제조사
+              {' '}
+              {orderStore.productImformation.manufacturer}
+            </p>
+            <p>{orderStore.productImformation.title}</p>
+            <p>
+              구매수량:
+              {' '}
+              {orderStore.productImformation.amount}
+            </p>
+            <p>
+              총 상품금액:
+              {' '}
+              {orderStore.productImformation.totalPrice}
+              원
+            </p>
+          </Imformation>
+        </Menu>
+        <Input>
           <label htmlFor="input-receiver">
             받는 분 성함
           </label>
@@ -52,11 +117,14 @@ export default function OrderPage() {
             id="input-receiver"
             type="text"
             name="receiver"
-            {...register('receiver', { required: '성함을 입력해주세요.' })}
+            {...register('receiver', { required: true })}
           />
-          <p>{errors.receiver?.message}</p>
-        </div>
-        <div>
+          <p className={errors.receiver ? 'error' : 'default'}>
+            {errors.receiver ? '성함을 입력해주세요.'
+              : '3~7자까지 한글만 사용 가능'}
+          </p>
+        </Input>
+        <Input>
           <label htmlFor="input-address">
             받는 분 주소
           </label>
@@ -64,11 +132,14 @@ export default function OrderPage() {
             id="input-address"
             type="text"
             name="address"
-            {...register('address', { required: '주소를 입력해주세요.' })}
+            {...register('address', { required: true })}
           />
-          <p>{errors.address?.message}</p>
-        </div>
-        <div>
+          <p className={errors.address ? 'error' : 'default'}>
+            {errors.address ? '주소를 입력해주세요.'
+              : '주소지를 입력해주세요'}
+          </p>
+        </Input>
+        <Input>
           <label htmlFor="input-message">
             받는 분께 보내는 메세지
           </label>
@@ -78,7 +149,8 @@ export default function OrderPage() {
             name="message"
             {...register('message')}
           />
-        </div>
+          <p>100글자 이내로 입력해주세요.</p>
+        </Input>
         <Button type="submit">선물하기</Button>
       </Wrapper>
     </Container>

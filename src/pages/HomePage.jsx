@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import giftImage from '../images/home.jpg';
 
 const Container = styled.div`
   display: flex;
@@ -9,8 +8,8 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  width: 250px;
-  height: 150px;
+  width: 270px;
+  height: 180px;
   margin-left: 50px;
 `;
 
@@ -31,7 +30,7 @@ export default function HomePage() {
           마카오 선물하기에서만 볼 수 있는 특별한 아이템
         </p>
       </div>
-      <Image className="home" alt="gift" src={giftImage} />
+      <Image className="home" alt="gift" src="https://cdn.shopify.com/s/files/1/1749/5899/articles/Best-Gifts-For-Tennis-Players-Epirus-Blog-min_1000x.png?v=1611551327" />
     </Container>
   );
 }

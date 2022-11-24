@@ -2,7 +2,7 @@ const {
   screen, waitFor, fireEvent, render, cleanup,
 } = require('@testing-library/react');
 
-const { default: ProductPage } = require('./ProductPage');
+const { default: Product } = require('./Product');
 
 const navigator = jest.fn();
 
@@ -13,8 +13,8 @@ jest.mock('react-router-dom', () => ({
   }),
 }));
 
-test('productPage-screen', async () => {
-  render(<ProductPage />);
+test('product-screen', async () => {
+  render(<Product productId={1} />);
 
   await waitFor(() => {
     screen.getByText('한우팝니다');
@@ -25,8 +25,8 @@ test('productPage-screen', async () => {
   });
 });
 
-test('productPage-addAmount', async () => {
-  render(<ProductPage />);
+test('product-addAmount', async () => {
+  render(<Product productId={1} />);
 
   fireEvent.click(screen.getByAltText('plus'));
 
@@ -36,8 +36,8 @@ test('productPage-addAmount', async () => {
   });
 });
 
-test('productPage-minusAmount', async () => {
-  render(<ProductPage />);
+test('product-minusAmount', async () => {
+  render(<Product productId={1} />);
 
   fireEvent.click(screen.getByAltText('plus'));
   fireEvent.click(screen.getByAltText('minus'));
@@ -48,8 +48,8 @@ test('productPage-minusAmount', async () => {
   });
 });
 
-test('productPage-order', async () => {
-  render(<ProductPage />);
+test('product-order', async () => {
+  render(<Product productId={1} />);
 
   fireEvent.click(screen.getByText('선물하기'));
 

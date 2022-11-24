@@ -11,21 +11,30 @@ export default class OrderStore extends Store {
     this.receiver = '';
     this.message = '';
     this.productImformation = {};
+    this.errorMessage = '';
   }
 
   async fetchOrders(page, accessToken) {
-    const { orders, pages } = await apiService.ordersList(page, accessToken);
+    try {
+      const { orders, pages } = await apiService.ordersList(page, accessToken);
 
-    this.orders = orders;
-    this.pages = pages;
+      this.orders = orders;
+      this.pages = pages;
+    } catch (e) {
+      this.errorMessage = '토큰 넣어주세요';
+    }
 
     this.publish();
   }
 
   async find(id) {
-    const order = await apiService.findOrder(id);
+    try {
+      const order = await apiService.findOrder(id);
 
-    this.order = order;
+      this.order = order;
+    } catch (e) {
+      this.errorMessage = '없는 주문내역입니다';
+    }
 
     this.publish();
   }
@@ -37,15 +46,21 @@ export default class OrderStore extends Store {
   async createOrder(data) {
     const { receiver, address, message } = data;
 
-    await apiService.order({
-      receiver,
-      address,
-      message,
-      totalPrice: this.productImformation.totalPrice,
-      amount: this.productImformation.amount,
-      title: this.productImformation.title,
-      manufacturer: this.productImformation.manufacturer,
-    });
+    try {
+      await apiService.order({
+        receiver,
+        address,
+        message,
+        totalPrice: this.productImformation.totalPrice,
+        amount: this.productImformation.amount,
+        title: this.productImformation.title,
+        manufacturer: this.productImformation.manufacturer,
+        image: this.productImformation.image,
+
+      });
+    } catch (e) {
+      this.errorMessage = '입력사항을 기입해주세요';
+    }
 
     this.publish();
   }

@@ -9,20 +9,29 @@ export default class ProductStore extends Store {
     this.product = {};
     this.pages = [];
     this.productId = 0;
+    this.errorMessage = '';
   }
 
   async fetchProducts(page) {
-    const { products, pages } = await apiService.productsList(page);
+    try {
+      const { products, pages } = await apiService.productsList(page);
 
-    this.products = products;
-    this.pages = pages;
+      this.products = products;
+      this.pages = pages;
+    } catch (e) {
+      this.errorMessage = '없는 페이지입니다';
+    }
 
     this.publish();
   }
 
   async find(id) {
-    const product = await apiService.findProduct(id);
-    this.product = product;
+    try {
+      const product = await apiService.findProduct(id);
+      this.product = product;
+    } catch (e) {
+      this.errorMessage = '없는 상품입니다';
+    }
 
     this.publish();
   }

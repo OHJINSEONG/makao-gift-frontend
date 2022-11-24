@@ -6,30 +6,44 @@ import useOrderStore from '../hooks/useOrderStore';
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: .5em;
+  align-items: center;
+  height: 400px;
+
+  .manufacturer {
+    margin: 2px 0px;
+  }
+
+  .receiver {
+    margin-top: 2px;
+    color :black
+  }
 `;
 
 const Menu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 700px;
 
-  h1 {
+  h2 {
+    font-size: 1em;
+    width: 700px;
     align-self: flex-start;
   }
 `;
 
 const OrderList = styled.ul`
-  display: grid;
-  grid: repeat(2,180px)/repeat(4,110px);
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
+  width: 840px;
 
   li{
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 250px;
   }
 
   a {
@@ -43,8 +57,16 @@ const OrderList = styled.ul`
 `;
 
 const Image = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+`;
+
+const Imformation = styled.div`
+  width: 150px;
+  height: 20px;
+  
+  color : gray;
+  font-size: .2em;
 `;
 
 export default function OrderListPage() {
@@ -52,8 +74,6 @@ export default function OrderListPage() {
   const [accessToken] = useLocalStorage('accessToken', '');
 
   useEffect(() => {
-    console.log(orderStore.orders);
-
     if (accessToken) {
       orderStore.fetchOrders(1, accessToken);
     }
@@ -69,18 +89,20 @@ export default function OrderListPage() {
               {orderStore.orders.map((order) => (
                 <li key={order.id}>
                   <Link className="order" to={`${order.id}`}>
-                    <Image src={require('../images/food.jpg')} />
-                    <p>
-                      제조사 :
-                      {' '}
-                      {order.manufacturer}
-                    </p>
-                    <p>{order.title}</p>
-                    <p>
-                      To.
-                      {' '}
-                      {order.receiver}
-                    </p>
+                    <Image src={order.image} />
+                    <Imformation>
+                      <p className="manufacturer">
+                        제조사 :
+                        {' '}
+                        {order.manufacturer}
+                      </p>
+                      <h1>{order.title}</h1>
+                      <p className="receiver">
+                        To.
+                        {' '}
+                        {order.receiver}
+                      </p>
+                    </Imformation>
                   </Link>
                 </li>
               ))}

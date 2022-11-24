@@ -16,13 +16,13 @@ test('signUp-form', () => {
 test('signUp-form-screen', () => {
   render(<SignUpForm />);
 
-  screen.getByLabelText('이름');
+  screen.getByLabelText('이름:');
 
-  screen.getByLabelText('아이디');
+  screen.getByLabelText('아이디:');
 
-  screen.getByLabelText('비밀번호');
+  screen.getByLabelText('비밀번호:');
 
-  screen.getByLabelText('비밀번호 확인');
+  screen.getByLabelText('비밀번호 확인:');
 
   screen.getByText('회원가입');
 });
@@ -30,19 +30,19 @@ test('signUp-form-screen', () => {
 test('signUp-form-inputChange', () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojseong0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 });
@@ -50,19 +50,19 @@ test('signUp-form-inputChange', () => {
 test('signUp-form-signUpSuccess', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojs0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
@@ -76,19 +76,19 @@ test('signUp-form-signUpSuccess', async () => {
 test('signUp-form-signUpWithInputExistedUserName', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojseong0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
@@ -102,19 +102,19 @@ test('signUp-form-signUpWithInputExistedUserName', async () => {
 test('signUp-form-signUpFailedWithReconfirmError', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojs0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!!' },
   });
 
@@ -128,19 +128,19 @@ test('signUp-form-signUpFailedWithReconfirmError', async () => {
 test('signUp-form-signUpFailedWithBlankName', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojs0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
@@ -154,15 +154,15 @@ test('signUp-form-signUpFailedWithBlankName', async () => {
 test('signUp-form-signUpFailedWithBlankUserName', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
@@ -176,15 +176,15 @@ test('signUp-form-signUpFailedWithBlankUserName', async () => {
 test('signUp-form-signUpFailedWithBlankPassword', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojs0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호 확인'), {
+  fireEvent.change(screen.getByLabelText('비밀번호 확인:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 
@@ -198,15 +198,15 @@ test('signUp-form-signUpFailedWithBlankPassword', async () => {
 test('signUp-form-signUpFailedWithBlankReconfirmPassword', async () => {
   render(<SignUpForm />);
 
-  fireEvent.change(screen.getByLabelText('이름'), {
+  fireEvent.change(screen.getByLabelText('이름:'), {
     target: { value: '오진성' },
   });
 
-  fireEvent.change(screen.getByLabelText('아이디'), {
+  fireEvent.change(screen.getByLabelText('아이디:'), {
     target: { value: 'ojs0828' },
   });
 
-  fireEvent.change(screen.getByLabelText('비밀번호'), {
+  fireEvent.change(screen.getByLabelText('비밀번호:'), {
     target: { value: 'Wlstjdcjs153!' },
   });
 

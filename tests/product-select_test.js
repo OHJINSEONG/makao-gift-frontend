@@ -41,10 +41,10 @@ Scenario('주문수량 늘리기', ({ I }) => {
   });
 
   // When
-  I.click('+');
+  I.click('.plus');
 
   // Then
-  I.see('20000원');
+  I.see('41800원');
 });
 
 Scenario('주문수량 줄이기', ({ I }) => {
@@ -56,11 +56,11 @@ Scenario('주문수량 줄이기', ({ I }) => {
   });
 
   // When
-  I.click('+');
-  I.click('-');
+  I.click('.plus');
+  I.click('.minus');
 
   // Then
-  I.see('10000원');
+  I.see('20900원');
 });
 
 Scenario('주문 실패 (잔액 부족)', ({ I }) => {
@@ -72,11 +72,11 @@ Scenario('주문 실패 (잔액 부족)', ({ I }) => {
   });
 
   // When
-  I.click('+');
-  I.click('+');
-  I.click('+');
-  I.click('+');
-  I.click('+');
+  I.click('.plus');
+  I.click('.plus');
+  I.click('.plus');
+  I.click('.plus');
+  I.click('.plus');
   I.click('선물하기');
 
   // Then

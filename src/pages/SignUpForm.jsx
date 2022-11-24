@@ -11,12 +11,19 @@ const Container = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 540px;
+  
+  
+  p{
+    font-size: 1px;
+    color : #999999
+  }
 
   h1{
-    width: 200px;
+    width: 260px;
     text-align: center;
     border-bottom: 1px solid #22daab;
+    margin-bottom: 30px;
   }
 
   .over {
@@ -27,16 +34,16 @@ const Container = styled.form`
     background-color: #008c69;
   }
 
-  p {
-    font-size: .3em;
+  .error {
     color: red
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  width: 200px;
+  width: 260px;
   flex-direction: column;
+  margin-bottom: 10px;
 
   label{
     font-size: .4em;
@@ -45,12 +52,12 @@ const Wrapper = styled.div`
 
   input{
     height: 30px;
-    border-style: double;
+    border-style: double;    
   }
 `;
 
 const Button = styled.button`
-  width: 200px;
+  width: 260px;
   height: 35px;
   margin-top: 10px;
   color : white;
@@ -89,7 +96,10 @@ export default function SignUpForm() {
             maxLength: { message: '이름을 다시 확인해주세요.', value: 7 },
           })}
         />
-        <p>{errors.name?.message}</p>
+        <p className={errors.name ? 'error' : 'default'}>
+          {errors.name ? errors.name.message
+            : '3~7자까지 한글만 사용 가능'}
+        </p>
       </Wrapper>
       <Wrapper>
         <label htmlFor="input-userName">
@@ -104,9 +114,12 @@ export default function SignUpForm() {
             pattern: { message: '아이디를 다시 확인해주세요.', value: /^[A-Za-z0-9]{4,16}$/ },
           })}
         />
-        <p>{errors.userName?.message}</p>
+        <p className={errors.userName ? 'error' : 'default'}>
+          {errors.userName ? errors.userName.message
+            : '영문소문자/숫자,4~16자만 사용 가능'}
+        </p>
         {userStore.isExistUserNameError ? (
-          <p>{userStore.errorMessage}</p>
+          <p className="error">{userStore.errorMessage}</p>
         ) : null}
       </Wrapper>
       <Wrapper>
@@ -125,7 +138,10 @@ export default function SignUpForm() {
             },
           })}
         />
-        <p>{errors.password?.message}</p>
+        <p className={errors.password ? 'error' : 'default'}>
+          {errors.password ? errors.password.message
+            : '8글자 이상의 영문(대소문자),숫자,특수문자가 모두 포함되어야 함'}
+        </p>
       </Wrapper>
       <Wrapper>
         <label htmlFor="input-reconfirmPassword">
@@ -139,9 +155,9 @@ export default function SignUpForm() {
             required: '비밀번호 확인을 입력해주세요.',
           })}
         />
-        <p>{errors.reconfirmPassword?.message}</p>
+        <p className="error">{errors.reconfirmPassword?.message}</p>
         {userStore.isReconfirmError ? (
-          <p>{userStore.errorMessage}</p>
+          <p className="error">{userStore.errorMessage}</p>
         ) : null}
       </Wrapper>
       <Button

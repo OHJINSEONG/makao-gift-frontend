@@ -7,7 +7,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import OrderListPage from './pages/OrderListPage';
 import OrderPage from './pages/OrderPage';
-import OrderProductPage from './pages/OrderProductPage';
+import OrderProductPage from './pages/OrderInformationPage';
 import ProductPage from './pages/ProductPage';
 import SignUpPage from './pages/SignUpPage';
 import SignUpSuccessPage from './pages/SignUpSuccessPage';
@@ -20,7 +20,6 @@ export default function App() {
   const userStore = useUserStore();
 
   useEffect(() => {
-    console.log(accessToken);
     apiService.setAccessToken(accessToken);
     if (accessToken) {
       userStore.fetchUser();

@@ -3,13 +3,13 @@ const { MemoryRouter } = require('react-router-dom');
 const { default: App } = require('./App');
 
 test('App', () => {
-  render(
+  render((
     <div>
       <MemoryRouter>
         <App />
       </MemoryRouter>
-    </div>,
-  );
+    </div>
+  ));
 
-  screen.getByText(/Hello/);
+  screen.getByText('무얼 선물할 지 고민이라면');
 });

@@ -7,14 +7,6 @@ Before(({ I }) => {
   I.amOnPage('/');
 });
 
-Scenario('상품이 있을때(50개)', ({ I }) => {
-  // When
-  I.click('스토어');
-
-  // Then
-  I.see('인기선물을 한 자리에 모았어요.');
-});
-
 Scenario('상품이 없을때', ({ I }) => {
   // Given
   I.deleteProducts();
@@ -25,4 +17,12 @@ Scenario('상품이 없을때', ({ I }) => {
 
   // Then
   I.see('상품이 존재하지 않습니다.');
+});
+
+Scenario('상품이 있을때(50개)', ({ I }) => {
+  // When
+  I.click('스토어');
+
+  // Then
+  I.see('인기선물을 한 자리에 모았어요.');
 });

@@ -1,7 +1,5 @@
 const { default: UserStore } = require('./UserStore');
 
-const context = describe;
-
 describe('userStore', () => {
   let userStore;
 
@@ -9,7 +7,7 @@ describe('userStore', () => {
     userStore = new UserStore();
   });
 
-  context('signup', () => {
+  describe('signup', () => {
     it('signupSuccess', async () => {
       await userStore.create({
         name: '오진성',
@@ -44,7 +42,7 @@ describe('userStore', () => {
     });
   });
 
-  context('login', () => {
+  describe('login', () => {
     it('loginSuccess', async () => {
       await userStore.login({
         userName: 'ojseong0828',

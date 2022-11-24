@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,9 +16,11 @@ const Container = styled.form`
 
   h1{
     border-bottom: 1px solid black;
+    margin-bottom: 30px;
   }
 
   p {
+    margin-top: 10px;
     font-size: .3em;
     color: red
   }
@@ -60,7 +61,7 @@ const Button = styled.button`
 export default function LoginForm() {
   const navigate = useNavigate();
   const [, setAccessToken] = useLocalStorage('accessToken', '');
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
   const [productUrl, setProductUrl] = useState('');
 
   const userStore = useUserStore();
@@ -99,27 +100,21 @@ export default function LoginForm() {
           type="text"
           name="userName"
           placeholder="아이디"
-          {...register('userName', {
-            required: '아이디를 입력해주세요.',
-          })}
+          {...register('userName')}
         />
       </Wrapper>
-      <p>{errors.userName?.message}</p>
       <Wrapper>
         <input
           id="input-password"
-          type="text"
+          type="password"
           name="password"
           placeholder="비밀번호"
-          {...register('password', {
-            required: '비밀번호를 입력해주세요.',
-          })}
+          {...register('password')}
         />
+        {userStore.isLoginError ? (
+          <p>{userStore.errorMessage}</p>
+        ) : null}
       </Wrapper>
-      <p>{errors.password?.message}</p>
-      {userStore.isLoginError ? (
-        <p>{userStore.errorMessage}</p>
-      ) : null}
       <Button type="submit">로그인하기</Button>
       <Link to="/signup">회원가입</Link>
     </Container>

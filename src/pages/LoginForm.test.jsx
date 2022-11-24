@@ -1,12 +1,20 @@
+import LoginForm from './LoginForm';
+
 const {
   render, screen, fireEvent, waitFor,
 } = require('@testing-library/react');
 
-const { default: LoginForm } = require('./LoginForm');
-
 const navigate = jest.fn();
 
 jest.mock('react-router-dom', () => ({
+  // eslint-disable-next-line react/prop-types
+  Link({ children, to }) {
+    return (
+      <a href={to}>
+        {children}
+      </a>
+    );
+  },
   useNavigate: () => navigate,
 }));
 
@@ -73,6 +81,10 @@ test('login-form-loginWithWrongUserName', async () => {
 test('login-form-loginFailedWithBlankUserName', async () => {
   render(<LoginForm />);
 
+  fireEvent.change(screen.getByPlaceholderText('아이디'), {
+    target: { value: '' },
+  });
+
   fireEvent.change(screen.getByPlaceholderText('비밀번호'), {
     target: { value: 'Wlstjdcjs153!' },
   });
@@ -89,6 +101,10 @@ test('login-form-loginFailedWithBlankPassword', async () => {
 
   fireEvent.change(screen.getByPlaceholderText('아이디'), {
     target: { value: 'ojseong0828' },
+  });
+
+  fireEvent.change(screen.getByPlaceholderText('비밀번호'), {
+    target: { value: '' },
   });
 
   fireEvent.click(screen.getByText('로그인하기'));

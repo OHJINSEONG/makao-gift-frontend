@@ -2909,6 +2909,7 @@ var _appDefault = parcelHelpers.interopDefault(_app);
 const container = document.getElementById("app");
 const root = (0, _clientDefault.default).createRoot(container);
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
+    basename: "/makao-gift-frontend",
     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
         fileName: "src/index.jsx",
         lineNumber: 9,

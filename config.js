@@ -1,5 +1,5 @@
 const config = {
-  apiBaseUrl: 'http://localhost:8000',
+  apiBaseUrl: 'https://makao-gift.herokuapp.com',
 };
 
 export default config;

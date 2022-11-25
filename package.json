@@ -1,0 +1,57 @@
+{
+  "name": "makao-gift-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx",
+    "build": "parcel build index.html --public-url ./ && cp 404.html ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "codeceptjs": "codeceptjs run --steps",
+    "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+    "codeceptjs:ui": "codecept-ui --app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OHJINSEONG/makao-gift-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OHJINSEONG/makao-gift-frontend/issues"
+  },
+  "homepage": "https://github.com/OHJINSEONG/makao-gift-frontend#readme",
+  "devDependencies": {
+    "@codeceptjs/configure": "^0.10.0",
+    "@codeceptjs/ui": "^0.4.7",
+    "@swc/core": "^1.3.15",
+    "@swc/jest": "^0.2.23",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.2",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "buffer": "^5.7.1",
+    "codeceptjs": "^3.3.6",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "msw": "^0.48.2",
+    "playwright": "^1.27.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "parcel": "^2.8.0",
+    "axios": "^1.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.39.3",
+    "react-router-dom": "^6.4.3",
+    "styled-components": "^5.3.6",
+    "usehooks-ts": "^2.9.1"
+  }
+}

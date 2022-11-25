@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { userStore } from '../stores/UserStore';
-import useForceUpdate from './useForceUpdate';
+import { userStore } from '../stores/UserStore.js';
+import useForceUpdate from './useForceUpdate.js';
 
 export default function useUserStore() {
   const forceUpdate = useForceUpdate();

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
-import useOrderStore from '../hooks/useOrderStore';
+import useOrderStore from '../hooks/useOrderStore.js';
 
 const Container = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 const {
   render, screen, fireEvent, waitFor,
 } = require('@testing-library/react');
-const { default: SignUpForm } = require('./SignUpForm');
+const { default: SignUpForm } = require('./SignUpForm.jsx');
 
 const navigate = jest.fn();
 

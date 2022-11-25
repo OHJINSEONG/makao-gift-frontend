@@ -2,7 +2,7 @@ const {
   screen, waitFor, fireEvent, render, cleanup,
 } = require('@testing-library/react');
 
-const { default: ProductPage } = require('./ProductPage');
+const { default: ProductPage } = require('./ProductPage.jsx');
 
 const navigator = jest.fn();
 

@@ -1,7 +1,7 @@
 const {
   render, screen, waitFor, fireEvent,
 } = require('@testing-library/react');
-const { default: OrderPage } = require('./OrderPage');
+const { default: OrderPage } = require('./OrderPage.jsx');
 
 const navigator = jest.fn();
 

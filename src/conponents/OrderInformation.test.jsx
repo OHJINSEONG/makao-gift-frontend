@@ -1,5 +1,5 @@
 const { render, screen, waitFor } = require('@testing-library/react');
-const { default: OrderInformation } = require('./OrderInformation');
+const { default: OrderInformation } = require('./OrderInformation.jsx');
 
 const navigator = jest.fn();
 

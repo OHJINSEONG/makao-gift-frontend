@@ -1,4 +1,4 @@
-const { default: ProductStore } = require('./ProductStore');
+const { default: ProductStore } = require('./ProductStore.js');
 
 describe('productStore', () => {
   let productStore;

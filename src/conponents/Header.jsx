@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
-import useUserStore from '../hooks/useUserStore';
+import useUserStore from '../hooks/useUserStore.js';
 
 const Container = styled.div`
   position: fixed;

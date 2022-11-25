@@ -1,4 +1,4 @@
-import LoginForm from './LoginForm';
+import LoginForm from './LoginForm.jsx';
 
 const {
   render, screen, fireEvent, waitFor,

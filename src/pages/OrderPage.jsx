@@ -3,8 +3,8 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import useOrderStore from '../hooks/useOrderStore';
-import useUserStore from '../hooks/useUserStore';
+import useOrderStore from '../hooks/useOrderStore.js';
+import useUserStore from '../hooks/useUserStore.js';
 
 const Container = styled.form`
   display: flex;

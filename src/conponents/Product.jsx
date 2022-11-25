@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import useOrderStore from '../hooks/useOrderStore';
+import useOrderStore from '../hooks/useOrderStore.js';
 
-import useProductStore from '../hooks/useProductStore';
-import useUserStore from '../hooks/useUserStore';
-import { apiService } from '../services/ApiService';
+import useProductStore from '../hooks/useProductStore.js';
+import useUserStore from '../hooks/useUserStore.js';
+import { apiService } from '../services/ApiService.js';
 
 const Container = styled.div`
   display: flex;

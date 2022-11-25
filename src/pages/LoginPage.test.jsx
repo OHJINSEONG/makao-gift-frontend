@@ -1,5 +1,5 @@
 const { render, screen } = require('@testing-library/react');
-const { default: LoginPage } = require('./LoginPage');
+const { default: LoginPage } = require('./LoginPage.jsx');
 
 const navigate = jest.fn();
 

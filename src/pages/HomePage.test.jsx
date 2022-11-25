@@ -1,5 +1,5 @@
 const { render, screen } = require('@testing-library/react');
-const { default: HomePage } = require('./HomePage');
+const { default: HomePage } = require('./HomePage.jsx');
 
 test('homePage', () => {
   render(<HomePage />);

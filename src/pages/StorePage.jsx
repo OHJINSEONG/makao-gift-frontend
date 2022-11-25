@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import useProductStore from '../hooks/useProductStore';
+import useProductStore from '../hooks/useProductStore.js';
 
 const Container = styled.div`
   display: flex;

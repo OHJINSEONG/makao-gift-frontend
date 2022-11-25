@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
-import useProductStore from '../hooks/useProductStore';
-import useUserStore from '../hooks/useUserStore';
+import useProductStore from '../hooks/useProductStore.js';
+import useUserStore from '../hooks/useUserStore.js';
 
 const Container = styled.form`
   display: flex;

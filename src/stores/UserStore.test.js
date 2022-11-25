@@ -1,4 +1,4 @@
-const { default: UserStore } = require('./UserStore');
+const { default: UserStore } = require('./UserStore.js');
 
 describe('userStore', () => {
   let userStore;

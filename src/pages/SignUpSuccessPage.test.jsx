@@ -1,7 +1,7 @@
 const {
   render, screen, fireEvent,
 } = require('@testing-library/react');
-const { default: SignUpSuccessPage } = require('./SignUpSuccessPage');
+const { default: SignUpSuccessPage } = require('./SignUpSuccessPage.jsx');
 
 jest.mock('react-router-dom', () => ({
   // eslint-disable-next-line react/prop-types

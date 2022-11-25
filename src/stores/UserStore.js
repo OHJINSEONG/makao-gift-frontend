@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
-import { apiService } from '../services/ApiService';
-import Store from './Store';
+import { apiService } from '../services/ApiService.js';
+import Store from './Store.js';
 
 export default class UserStore extends Store {
   constructor() {

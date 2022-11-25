@@ -1,6 +1,6 @@
 const { render, screen } = require('@testing-library/react');
 const { MemoryRouter } = require('react-router-dom');
-const { default: App } = require('./App');
+const { default: App } = require('./App.jsx');
 
 test('App', () => {
   render((

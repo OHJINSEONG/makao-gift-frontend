@@ -1,5 +1,5 @@
 const { render, screen } = require('@testing-library/react');
-const { default: Header } = require('./Header');
+const { default: Header } = require('./Header.jsx');
 
 const navigate = jest.fn();
 

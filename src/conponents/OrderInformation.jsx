@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import useOrderStore from '../hooks/useOrderStore';
+import useOrderStore from '../hooks/useOrderStore.js';
 
 const Container = styled.div`
   display: flex;

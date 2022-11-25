@@ -1,4 +1,4 @@
-const { default: OrderStore } = require('./OrderStore');
+const { default: OrderStore } = require('./OrderStore.js');
 
 const context = describe;
 

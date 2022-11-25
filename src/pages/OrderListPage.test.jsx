@@ -2,7 +2,7 @@ const {
   render, screen, waitFor, cleanup,
 } = require('@testing-library/react');
 
-const { default: OrderListPage } = require('./OrderListPage');
+const { default: OrderListPage } = require('./OrderListPage.jsx');
 
 jest.mock('react-router-dom', () => ({
   // eslint-disable-next-line react/prop-types

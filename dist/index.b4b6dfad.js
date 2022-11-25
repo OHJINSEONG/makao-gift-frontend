@@ -31692,50 +31692,50 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _usehooksTs = require("usehooks-ts");
-var _header = require("./conponents/Header");
-var _headerDefault = parcelHelpers.interopDefault(_header);
-var _useUserStore = require("./hooks/useUserStore");
-var _useUserStoreDefault = parcelHelpers.interopDefault(_useUserStore);
-var _homePage = require("./pages/HomePage");
-var _homePageDefault = parcelHelpers.interopDefault(_homePage);
-var _loginPage = require("./pages/LoginPage");
-var _loginPageDefault = parcelHelpers.interopDefault(_loginPage);
-var _orderListPage = require("./pages/OrderListPage");
-var _orderListPageDefault = parcelHelpers.interopDefault(_orderListPage);
-var _orderPage = require("./pages/OrderPage");
-var _orderPageDefault = parcelHelpers.interopDefault(_orderPage);
-var _orderInformationPage = require("./pages/OrderInformationPage");
-var _orderInformationPageDefault = parcelHelpers.interopDefault(_orderInformationPage);
-var _productPage = require("./pages/ProductPage");
-var _productPageDefault = parcelHelpers.interopDefault(_productPage);
-var _signUpPage = require("./pages/SignUpPage");
-var _signUpPageDefault = parcelHelpers.interopDefault(_signUpPage);
-var _signUpSuccessPage = require("./pages/SignUpSuccessPage");
-var _signUpSuccessPageDefault = parcelHelpers.interopDefault(_signUpSuccessPage);
-var _storePage = require("./pages/StorePage");
-var _storePageDefault = parcelHelpers.interopDefault(_storePage);
-var _apiService = require("./services/ApiService");
-var _globalStyle = require("./styles/GlobalStyle");
-var _globalStyleDefault = parcelHelpers.interopDefault(_globalStyle);
+var _headerJsx = require("./conponents/Header.jsx");
+var _headerJsxDefault = parcelHelpers.interopDefault(_headerJsx);
+var _useUserStoreJs = require("./hooks/useUserStore.js");
+var _useUserStoreJsDefault = parcelHelpers.interopDefault(_useUserStoreJs);
+var _homePageJsx = require("./pages/HomePage.jsx");
+var _homePageJsxDefault = parcelHelpers.interopDefault(_homePageJsx);
+var _loginPageJsx = require("./pages/LoginPage.jsx");
+var _loginPageJsxDefault = parcelHelpers.interopDefault(_loginPageJsx);
+var _orderListPageJsx = require("./pages/OrderListPage.jsx");
+var _orderListPageJsxDefault = parcelHelpers.interopDefault(_orderListPageJsx);
+var _orderPageJsx = require("./pages/OrderPage.jsx");
+var _orderPageJsxDefault = parcelHelpers.interopDefault(_orderPageJsx);
+var _orderInformationPageJsx = require("./pages/OrderInformationPage.jsx");
+var _orderInformationPageJsxDefault = parcelHelpers.interopDefault(_orderInformationPageJsx);
+var _productPageJsx = require("./pages/ProductPage.jsx");
+var _productPageJsxDefault = parcelHelpers.interopDefault(_productPageJsx);
+var _signUpPageJsx = require("./pages/SignUpPage.jsx");
+var _signUpPageJsxDefault = parcelHelpers.interopDefault(_signUpPageJsx);
+var _signUpSuccessPageJsx = require("./pages/SignUpSuccessPage.jsx");
+var _signUpSuccessPageJsxDefault = parcelHelpers.interopDefault(_signUpSuccessPageJsx);
+var _storePageJsx = require("./pages/StorePage.jsx");
+var _storePageJsxDefault = parcelHelpers.interopDefault(_storePageJsx);
+var _apiServiceJs = require("./services/ApiService.js");
+var _globalStyleJs = require("./styles/GlobalStyle.js");
+var _globalStyleJsDefault = parcelHelpers.interopDefault(_globalStyleJs);
 var _s = $RefreshSig$();
 function App() {
     _s();
     const [accessToken] = (0, _usehooksTs.useLocalStorage)("accessToken", "");
-    const userStore = (0, _useUserStoreDefault.default)();
+    const userStore = (0, _useUserStoreJsDefault.default)();
     (0, _react.useEffect)(()=>{
-        (0, _apiService.apiService).setAccessToken(accessToken);
+        (0, _apiServiceJs.apiService).setAccessToken(accessToken);
         if (accessToken) userStore.fetchUser();
     }, [
         accessToken
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalStyleDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalStyleJsDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
                 lineNumber: 31,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerJsxDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
                 lineNumber: 32,
                 columnNumber: 7
@@ -31745,7 +31745,7 @@ function App() {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homePageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homePageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 35,
@@ -31753,7 +31753,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/login",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 36,
@@ -31761,7 +31761,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/signup",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUpPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUpPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 37,
@@ -31769,7 +31769,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/signupSuccess",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUpSuccessPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUpSuccessPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 38,
@@ -31777,7 +31777,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/products",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _storePageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _storePageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 39,
@@ -31785,7 +31785,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "products/:productId",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 40,
@@ -31793,7 +31793,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/order",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 41,
@@ -31801,7 +31801,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/orders",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderListPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderListPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 42,
@@ -31809,7 +31809,7 @@ function App() {
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "orders/:orderId",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderInformationPageDefault.default), {}, void 0, false, void 0, void 0)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderInformationPageJsxDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 43,
@@ -31837,7 +31837,7 @@ exports.default = App;
 _s(App, "hIuxZYFlggPYxS+/k1UGa9sphh4=", false, function() {
     return [
         (0, _usehooksTs.useLocalStorage),
-        (0, _useUserStoreDefault.default)
+        (0, _useUserStoreJsDefault.default)
     ];
 });
 _c = App;
@@ -31849,7 +31849,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","usehooks-ts":"dmUe4","./conponents/Header":"gWF8V","./hooks/useUserStore":"gJqal","./pages/HomePage":"9Nmxq","./pages/LoginPage":"4ZWSW","./pages/OrderListPage":"1dgUR","./pages/OrderPage":"7mcdG","./pages/ProductPage":"63DHy","./pages/SignUpPage":"2W5sU","./pages/SignUpSuccessPage":"epdB9","./pages/StorePage":"6BLiS","./services/ApiService":"7vwf0","./styles/GlobalStyle":"50yYz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./pages/OrderInformationPage":"7BTAu"}],"dmUe4":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","usehooks-ts":"dmUe4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./conponents/Header.jsx":"gWF8V","./hooks/useUserStore.js":"gJqal","./pages/HomePage.jsx":"9Nmxq","./pages/LoginPage.jsx":"4ZWSW","./pages/OrderListPage.jsx":"1dgUR","./pages/OrderPage.jsx":"7mcdG","./pages/OrderInformationPage.jsx":"7BTAu","./pages/ProductPage.jsx":"63DHy","./pages/SignUpPage.jsx":"2W5sU","./pages/SignUpSuccessPage.jsx":"epdB9","./pages/StorePage.jsx":"6BLiS","./services/ApiService.js":"7vwf0","./styles/GlobalStyle.js":"50yYz"}],"dmUe4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useBoolean", ()=>(0, _useBooleanDefault.default));
@@ -42145,7 +42145,297 @@ $RefreshReg$(_c7, "OrderPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-hook-form":"kRky9","react-router-dom":"9xmpe","styled-components":"1U3k6","../hooks/useOrderStore":"bDZko","../hooks/useUserStore":"gJqal","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"63DHy":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-hook-form":"kRky9","react-router-dom":"9xmpe","styled-components":"1U3k6","../hooks/useOrderStore":"bDZko","../hooks/useUserStore":"gJqal","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7BTAu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c4ac = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c4ac.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _orderInformation = require("../conponents/OrderInformation");
+var _orderInformationDefault = parcelHelpers.interopDefault(_orderInformation);
+var _s = $RefreshSig$();
+function OrderInformationPage() {
+    _s();
+    const { orderId  } = (0, _reactRouterDom.useParams)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderInformationDefault.default), {
+        orderId: orderId
+    }, void 0, false, {
+        fileName: "src/pages/OrderInformationPage.jsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, this);
+}
+exports.default = OrderInformationPage;
+_s(OrderInformationPage, "6qGDQdeQG7mFPYtl1YdIc7HM/bY=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams)
+    ];
+});
+_c = OrderInformationPage;
+var _c;
+$RefreshReg$(_c, "OrderInformationPage");
+
+  $parcel$ReactRefreshHelpers$c4ac.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../conponents/OrderInformation":"90BuB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"90BuB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1c8a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1c8a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _useOrderStore = require("../hooks/useOrderStore");
+var _useOrderStoreDefault = parcelHelpers.interopDefault(_useOrderStore);
+var _s = $RefreshSig$();
+const Container = (0, _styledComponentsDefault.default).div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  font-size: .5em;
+
+  h2{
+    font-size: 1.4em;
+    width: 400px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: solid 1px #999999;
+  }
+`;
+_c = Container;
+const Image = (0, _styledComponentsDefault.default).img`
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+`;
+_c1 = Image;
+const Menu = (0, _styledComponentsDefault.default).div`
+  width: 400px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #999999;
+`;
+_c2 = Menu;
+const Gray = (0, _styledComponentsDefault.default).p`
+  color: #999999
+`;
+_c3 = Gray;
+function OrderInformation({ orderId  }) {
+    _s();
+    const orderStore = (0, _useOrderStoreDefault.default)();
+    (0, _react.useEffect)(()=>{
+        orderStore.find(orderId);
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Container, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Image, {
+                src: orderStore.order.image
+            }, void 0, false, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 51,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                children: [
+                    "제조사:",
+                    " ",
+                    orderStore.order.manufacturer
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 52,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: orderStore.order.title
+            }, void 0, false, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 57,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "구매수량 :"
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 59,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                        children: [
+                            orderStore.order.amount,
+                            "개"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 62,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 58,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "총 상품금액:"
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 68,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                        children: [
+                            orderStore.order.totalPrice,
+                            "원"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 71,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 67,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "구매일 :"
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 77,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                        children: orderStore.order.dateOfPurchase
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 80,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 76,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "받는 분 :"
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 85,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                        children: orderStore.order.receiver
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 88,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 84,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "받는 분 주소 :"
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 93,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                        children: orderStore.order.address
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 96,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 92,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "받는 분께 보내는 메세지 :"
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 101,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
+                        children: orderStore.order.message
+                    }, void 0, false, {
+                        fileName: "src/conponents/OrderInformation.jsx",
+                        lineNumber: 104,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/conponents/OrderInformation.jsx",
+                lineNumber: 100,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/conponents/OrderInformation.jsx",
+        lineNumber: 50,
+        columnNumber: 5
+    }, this);
+}
+exports.default = OrderInformation;
+_s(OrderInformation, "yddmW5CbGw2xPgvWCUWaqVNVEeU=", false, function() {
+    return [
+        (0, _useOrderStoreDefault.default)
+    ];
+});
+_c4 = OrderInformation;
+var _c, _c1, _c2, _c3, _c4;
+$RefreshReg$(_c, "Container");
+$RefreshReg$(_c1, "Image");
+$RefreshReg$(_c2, "Menu");
+$RefreshReg$(_c3, "Gray");
+$RefreshReg$(_c4, "OrderInformation");
+
+  $parcel$ReactRefreshHelpers$1c8a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../hooks/useOrderStore":"bDZko","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"63DHy":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2e3c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42185,7 +42475,7 @@ $RefreshReg$(_c, "ProductPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../conponents/Product":"OoTPz"}],"OoTPz":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../conponents/Product":"OoTPz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"OoTPz":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a7ce = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42945,7 +43235,7 @@ $RefreshReg$(_c1, "SignUpSuccessPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","styled-components":"1U3k6"}],"6BLiS":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6BLiS":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9d1b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43235,296 +43525,6 @@ const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
 `;
 exports.default = GlobalStyle;
 
-},{"styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7BTAu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c4ac = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c4ac.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _orderInformation = require("../conponents/OrderInformation");
-var _orderInformationDefault = parcelHelpers.interopDefault(_orderInformation);
-var _s = $RefreshSig$();
-function OrderInformationPage() {
-    _s();
-    const { orderId  } = (0, _reactRouterDom.useParams)();
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderInformationDefault.default), {
-        orderId: orderId
-    }, void 0, false, {
-        fileName: "src/pages/OrderInformationPage.jsx",
-        lineNumber: 8,
-        columnNumber: 5
-    }, this);
-}
-exports.default = OrderInformationPage;
-_s(OrderInformationPage, "6qGDQdeQG7mFPYtl1YdIc7HM/bY=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams)
-    ];
-});
-_c = OrderInformationPage;
-var _c;
-$RefreshReg$(_c, "OrderInformationPage");
-
-  $parcel$ReactRefreshHelpers$c4ac.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../conponents/OrderInformation":"90BuB"}],"90BuB":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1c8a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1c8a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _useOrderStore = require("../hooks/useOrderStore");
-var _useOrderStoreDefault = parcelHelpers.interopDefault(_useOrderStore);
-var _s = $RefreshSig$();
-const Container = (0, _styledComponentsDefault.default).div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 600px;
-  font-size: .5em;
-
-  h2{
-    font-size: 1.4em;
-    width: 400px;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    border-bottom: solid 1px #999999;
-  }
-`;
-_c = Container;
-const Image = (0, _styledComponentsDefault.default).img`
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
-`;
-_c1 = Image;
-const Menu = (0, _styledComponentsDefault.default).div`
-  width: 400px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: solid 1px #999999;
-`;
-_c2 = Menu;
-const Gray = (0, _styledComponentsDefault.default).p`
-  color: #999999
-`;
-_c3 = Gray;
-function OrderInformation({ orderId  }) {
-    _s();
-    const orderStore = (0, _useOrderStoreDefault.default)();
-    (0, _react.useEffect)(()=>{
-        orderStore.find(orderId);
-    }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Container, {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Image, {
-                src: orderStore.order.image
-            }, void 0, false, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 51,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                children: [
-                    "제조사:",
-                    " ",
-                    orderStore.order.manufacturer
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 52,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: orderStore.order.title
-            }, void 0, false, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 57,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "구매수량 :"
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 59,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                        children: [
-                            orderStore.order.amount,
-                            "개"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 58,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "총 상품금액:"
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 68,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                        children: [
-                            orderStore.order.totalPrice,
-                            "원"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 71,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 67,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "구매일 :"
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 77,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                        children: orderStore.order.dateOfPurchase
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 80,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 76,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "받는 분 :"
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 85,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                        children: orderStore.order.receiver
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 88,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 84,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "받는 분 주소 :"
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 93,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                        children: orderStore.order.address
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 96,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 92,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "받는 분께 보내는 메세지 :"
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 101,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Gray, {
-                        children: orderStore.order.message
-                    }, void 0, false, {
-                        fileName: "src/conponents/OrderInformation.jsx",
-                        lineNumber: 104,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/conponents/OrderInformation.jsx",
-                lineNumber: 100,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/conponents/OrderInformation.jsx",
-        lineNumber: 50,
-        columnNumber: 5
-    }, this);
-}
-exports.default = OrderInformation;
-_s(OrderInformation, "yddmW5CbGw2xPgvWCUWaqVNVEeU=", false, function() {
-    return [
-        (0, _useOrderStoreDefault.default)
-    ];
-});
-_c4 = OrderInformation;
-var _c, _c1, _c2, _c3, _c4;
-$RefreshReg$(_c, "Container");
-$RefreshReg$(_c1, "Image");
-$RefreshReg$(_c2, "Menu");
-$RefreshReg$(_c3, "Gray");
-$RefreshReg$(_c4, "OrderInformation");
-
-  $parcel$ReactRefreshHelpers$1c8a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../hooks/useOrderStore":"bDZko","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequirebc3f")
+},{"styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequirebc3f")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

@@ -1,19 +1,19 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useLocalStorage } from 'usehooks-ts';
-import Header from './conponents/Header';
-import useUserStore from './hooks/useUserStore';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import OrderListPage from './pages/OrderListPage';
-import OrderPage from './pages/OrderPage';
-import OrderProductPage from './pages/OrderInformationPage';
-import ProductPage from './pages/ProductPage';
-import SignUpPage from './pages/SignUpPage';
-import SignUpSuccessPage from './pages/SignUpSuccessPage';
-import StorePage from './pages/StorePage';
-import { apiService } from './services/ApiService';
-import GlobalStyle from './styles/GlobalStyle';
+import Header from './conponents/Header.jsx';
+import useUserStore from './hooks/useUserStore.js';
+import HomePage from './pages/HomePage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import OrderListPage from './pages/OrderListPage.jsx';
+import OrderPage from './pages/OrderPage.jsx';
+import OrderProductPage from './pages/OrderInformationPage.jsx';
+import ProductPage from './pages/ProductPage.jsx';
+import SignUpPage from './pages/SignUpPage.jsx';
+import SignUpSuccessPage from './pages/SignUpSuccessPage.jsx';
+import StorePage from './pages/StorePage.jsx';
+import { apiService } from './services/ApiService.js';
+import GlobalStyle from './styles/GlobalStyle.js';
 
 export default function App() {
   const [accessToken] = useLocalStorage('accessToken', '');
